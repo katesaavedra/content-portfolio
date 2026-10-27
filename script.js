@@ -39,11 +39,11 @@ const CASES = [
     title: 'Реклама телефона HONOR с настоящим медведем',
     client: 'HONOR',
     short: 'Сняла рекламный ролик телефона HONOR с участием настоящего медведя.',
-    cover: 'assets/honor-poster-2.jpg', preview: 'assets/honor-preview.mp4',
+    cover: 'assets/honor-poster-3.jpg', preview: 'assets/honor-preview.mp4',
     blocks: [
       { h: 'Клиент', p: ['HONOR'] },
       { h: 'О проекте', p: ['Сценарий и съёмка рекламного ролика телефона HONOR с участием настоящего медведя.'] },
-      { h: 'Ролик', video: 'assets/honor-bear.mp4', poster: 'assets/honor-poster-2.jpg', links: [['Смотреть на YouTube', 'https://youtu.be/2LD9RAq3fbI?si=-nhURwLTrVml_tJu']] },
+      { h: 'Ролик', video: 'assets/honor-bear.mp4', poster: 'assets/honor-poster-3.jpg', links: [['Смотреть на YouTube', 'https://youtu.be/2LD9RAq3fbI?si=-nhURwLTrVml_tJu']] },
       { h: 'Моя роль', list: [
         'Составила смету ролика, уложившись в скромный бюджет клиента',
         'Собрала команду из оператора, гафера, фокус-пуллера, второго режиссёра, монтажёра и хэлперов',
@@ -96,7 +96,7 @@ const CASES = [
     title: 'Кабинка Битрикс24 в ДЕПО',
     client: 'Битрикс24',
     short: 'Написала креативные лайны для спецпроекта Битрикс24 в ДЕПО.',
-    cover: 'assets/bitrix-booth.jpg', coverPos: 'center 35%',
+    cover: 'assets/bitrix-cover.jpg',
     blocks: [
       { h: 'Задача', p: ['Написать копирайт для брендированной кабинки с шумоизоляцией, которую на один месяц установили на фудкорте Депо.', 'Цель: нативно рассказать о преимуществах Битрикс24 через юмор и органичное встраивание в место.'] },
       { h: 'Пример лайнов, которые для атмосферы расположены снаружи кабинки', list: [
@@ -106,7 +106,7 @@ const CASES = [
         'Пссс… не забудь закрыть вкладку с сериалом, когда будешь транслировать экран', 'Объявляется срочный нытинг мемами в рабочем чатике',
         'Обед — это маленький отпуск', 'Ты уже тусуешься в баре, а на часах всё ещё 12:04 вторника'
       ] },
-      { h: 'Как это выглядело', gallery: ['assets/bitrix-booth.jpg'], single: true },
+      { h: 'Как это выглядело', gallery: ['assets/bitrix-sign.jpg'], single: true },
       { h: 'Ссылки', links: [
         ['Полный копирайт', 'https://docs.google.com/document/d/1Ib-v7QRJvG5Z78ECq05vuMtFIMxoz_PNwS1hDjFegzI/edit?pli=1&tab=t.jq398cqej3r1'],
         ['Видео о кабинке в TikTok', 'https://www.tiktok.com/@bitrix24_ru/video/7558505547624992018']
@@ -117,7 +117,7 @@ const CASES = [
     title: 'Посты для Яндекса и Сбера',
     client: 'Яндекс · Сбер',
     short: 'Писала посты для каналов Яндекс Путешествий, Яндекс Лавки и Сбер Университета, которые собирали до 33К просмотров.',
-    cover: 'assets/yandex-travel-cover.jpg',
+    cover: 'assets/yandex-sber-cover.jpg',
     blocks: [
       { h: 'О проекте', p: ['Писала посты для каналов Яндекс Путешествий, Яндекс Лавки и Сбер Университета, которые собирали до 33К просмотров.'] },
       { h: 'Посты', links: [
