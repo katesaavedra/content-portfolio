@@ -5,7 +5,7 @@ const CASES = [
     title: 'Telegram-канал Яндекс Браузера',
     client: 'Яндекс Браузер',
     short: 'Веду тг-канал на 690 000+ подписчиков на тему нейросетей.',
-    cover: 'assets/yandex-browser-cover.jpg',
+    cover: 'assets/yandex-browser-cover-2.jpg', url: 'https://t.me/yabrowser',
     blocks: [
       { h: 'О проекте', p: ['Веду тг-канал на 690 000+ подписчиков на тему нейросетей.', 'Глубокое понимание темы канала и способов интересно рассказать об этом ЦА. Мои посты набирают ERV до 12% (ERV у Aviasales составляет 1,7%).'] },
       { h: 'Цифры', stats: [['690 000+', 'подписчиков в канале'], ['до 12%', 'ERV моих постов'], ['+166%', 'перевыполнение плана в марте']] },
@@ -20,7 +20,7 @@ const CASES = [
     title: 'ТГ-бот Мамба × Мэйби Бэйби',
     client: 'Мамба × Мэйби Бэйби',
     short: 'Придумала логику и копирайт бота-квеста для коллабы Мамбы и Мэйби Бэйби. Вау-результат — 13 938 пользователей.',
-    cover: 'assets/maybe-poster.jpg', coverPos: 'center 30%',
+    cover: 'assets/maybe-poster.jpg', coverPos: 'center top',
     blocks: [
       { h: 'Клиент', p: ['Мамба в коллаборации с певицей Мэйби Бэйби'] },
       { h: 'Задача', p: ['Привлечь аудиторию блогера в соцсети бренда и приложение Mamba.'] },
@@ -39,11 +39,11 @@ const CASES = [
     title: 'Реклама телефона HONOR с настоящим медведем',
     client: 'HONOR',
     short: 'Сняла рекламный ролик телефона HONOR с участием настоящего медведя.',
-    cover: 'assets/honor-poster.jpg', preview: 'assets/honor-preview.mp4',
+    cover: 'assets/honor-poster-2.jpg', preview: 'assets/honor-preview.mp4',
     blocks: [
       { h: 'Клиент', p: ['HONOR'] },
       { h: 'О проекте', p: ['Сценарий и съёмка рекламного ролика телефона HONOR с участием настоящего медведя.'] },
-      { h: 'Ролик', video: 'assets/honor-bear.mp4', poster: 'assets/honor-poster.jpg', links: [['Смотреть на YouTube', 'https://youtu.be/2LD9RAq3fbI?si=-nhURwLTrVml_tJu']] },
+      { h: 'Ролик', video: 'assets/honor-bear.mp4', poster: 'assets/honor-poster-2.jpg', links: [['Смотреть на YouTube', 'https://youtu.be/2LD9RAq3fbI?si=-nhURwLTrVml_tJu']] },
       { h: 'Моя роль', list: [
         'Составила смету ролика, уложившись в скромный бюджет клиента',
         'Собрала команду из оператора, гафера, фокус-пуллера, второго режиссёра, монтажёра и хэлперов',
@@ -109,7 +109,7 @@ const CASES = [
       { h: 'Как это выглядело', gallery: ['assets/bitrix-booth.jpg'], single: true },
       { h: 'Ссылки', links: [
         ['Полный копирайт', 'https://docs.google.com/document/d/1Ib-v7QRJvG5Z78ECq05vuMtFIMxoz_PNwS1hDjFegzI/edit?pli=1&tab=t.jq398cqej3r1'],
-        ['Видео о кабинке в TikTok Битрикс24', 'https://www.tiktok.com/@bitrix24_ru/video/7558505547624992018']
+        ['Видео о кабинке в TikTok', 'https://www.tiktok.com/@bitrix24_ru/video/7558505547624992018']
       ] }
     ]
   },
@@ -131,7 +131,7 @@ const CASES = [
     title: 'Молодёжный форум SVET ON',
     client: 'Норникель',
     short: 'Превратила сообщество ВКонтакте в интерактивную площадку для зумеров: +1 780% к охвату за 57 дней.',
-    cover: 'assets/svet-1.jpg', coverPos: 'center 15%',
+    cover: 'assets/svet-3.jpg', coverPos: 'center top',
     blocks: [
       { h: 'О проекте', p: ['SVET ON — форум «Норникеля» для школьников и студентов, которые хотят попробовать себя в предпринимательстве, инженерии, IT и волонтёрстве.'] },
       { h: 'Задача', p: ['С помощью ежедневного контент-сопровождения форума привлечь новых участников.'] },
@@ -240,7 +240,7 @@ function renderBlock(b) {
   if (b.quote) html += `<div class="m-quote">${b.quote.label ? `<div class="q-label">${esc(b.quote.label)}</div>` : ''}${b.quote.p.map(t => `<p>${esc(t)}</p>`).join('')}</div>`;
   if (b.video) html += `<video class="m-video" src="${b.video}" poster="${b.poster || ''}" controls playsinline preload="none"></video>`;
   if (b.links) html += `<div class="m-links">${b.links.map(([t, u]) => `<a href="${esc(u)}" target="_blank" rel="noopener">${esc(t)}</a>`).join('')}</div>`;
-  if (b.gallery) html += `<div class="m-gallery${b.single ? ' single' : ''}">${b.gallery.map(src => `<img src="${src}" alt="" loading="lazy">`).join('')}</div>`;
+  if (b.gallery) html += `<div class="m-gallery${b.single ? ' single' : ''}">${b.gallery.map(src => `<img src="${src}" alt="">`).join('')}</div>`;
   if (b.chat) html += `<div class="m-chat"><span class="m-chat-who">${esc(b.chat[0])}</span>${b.chat.slice(1).map(t => `<span>${esc(t)}</span>`).join('')}</div>`;
   return html + '</div>';
 }
@@ -249,7 +249,7 @@ function openCase(i) {
   const c = CASES[i];
   modalContent.innerHTML = `
     <div class="modal-client">Кейс ${pad(i + 1)} · ${esc(c.client)}</div>
-    <h3 id="modalTitle">${esc(c.title)}</h3>
+    <h3 id="modalTitle">${c.url ? `<a href="${esc(c.url)}" target="_blank" rel="noopener">${esc(c.title)}</a>` : esc(c.title)}</h3>
     <p class="modal-lead">${esc(c.short)}</p>
     ${c.blocks.map(renderBlock).join('')}`;
   lastFocus = document.activeElement;
