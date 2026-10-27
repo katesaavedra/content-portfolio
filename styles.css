@@ -245,8 +245,12 @@ ol.m-list li::before { content:counter(n); width:auto; height:auto; background:n
   .hero-photo .btn-accent.lg { left:62%; bottom:12%; padding:12px 22px; font-size:15px; }
   .hero-stats { grid-template-columns:repeat(2,1fr); }
   .contact-grid { grid-template-columns:1fr; }
-  .contact-photo { order:-1; }
+  .contact-photo { order:-1; justify-self:end; margin-right:8px; }
   .edu-row { grid-template-columns:1fr; gap:8px; }
+  /* No sideways scrolling: tilted highlights and rotated frames poke past the edge */
+  html, body { overflow-x:hidden; overflow-x:clip; }
+  .modal-overlay { overflow-x:hidden; }
+  .hl-right::before { right:-6px; }
 }
 @media (max-width:560px){
   .m-posts { grid-template-columns:1fr; }
