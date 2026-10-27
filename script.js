@@ -1,5 +1,6 @@
 // Кейсы. cover: картинка из assets/ или null — тогда рисуется типографическая обложка (word + metric).
 // preview: короткое видео, которое играет поверх обложки при наведении.
+// posts: скриншоты в один ряд, каждый — ссылка: [картинка, url, подпись].
 const CASES = [
   {
     title: 'Telegram-канал Яндекс Браузера',
@@ -9,6 +10,11 @@ const CASES = [
     blocks: [
       { h: 'О проекте', p: ['Веду тг-канал на 690 000+ подписчиков на тему нейросетей.', 'Глубокое понимание темы канала и способов интересно рассказать об этом ЦА. Мои посты набирают ERV до 12% (ERV у Aviasales составляет 1,7%).'] },
       { h: 'Цифры', stats: [['690 000+', 'подписчиков в канале'], ['до 12%', 'ERV моих постов'], ['+166%', 'перевыполнение плана в марте']] },
+      { h: 'Избранные посты', posts: [
+        ['assets/yb-post-1.jpg', 'https://t.me/yabrowser/820', '93.1К просмотров'],
+        ['assets/yb-post-2.jpg', 'https://t.me/yabrowser/817?single', '168.7К просмотров'],
+        ['assets/yb-post-3.jpg', 'https://t.me/yabrowser/784', '86.9К просмотров']
+      ] },
       { h: 'Мои личные достижения на проекте', list: [
         'Допродажа контента клиенту: в марте у нас была база в 9 постов, я перевыполнила её на 166%, продав клиенту ещё 15 постов',
         'Выстроила эффективную и успешную коммуникацию с клиентом, получаю положительную обратную связь на контент и свою работу',
@@ -120,10 +126,10 @@ const CASES = [
     cover: 'assets/yandex-sber-cover.jpg',
     blocks: [
       { h: 'О проекте', p: ['Писала посты для каналов Яндекс Путешествий, Яндекс Лавки и Сбер Университета, которые собирали до 33К просмотров.'] },
-      { h: 'Посты', links: [
-        ['Пост Яндекс Путешествий', 'https://t.me/yandex_travel/2653'],
-        ['Пост Яндекс Путешествий', 'https://t.me/yandex_travel/2490'],
-        ['Пост Сбер Университета', 'https://t.me/sber_university/2299']
+      { h: 'Посты', posts: [
+        ['assets/travel-post-1.jpg', 'https://t.me/yandex_travel/2653', '33К просмотров'],
+        ['assets/travel-post-2.jpg', 'https://t.me/yandex_travel/2490', '25.1К просмотров'],
+        ['assets/sber-post-1.jpg', 'https://t.me/sber_university/2299', '7.5К просмотров']
       ] }
     ]
   },
@@ -152,9 +158,9 @@ const CASES = [
     cover: 'assets/taganka-cover.jpg',
     blocks: [
       { h: 'О проекте', p: ['Работала в театре, посещала спектакли, писала про них тексты, брала интервью у режиссёров и актёров, создавала контент для соцсетей. До сих пор мои тексты спустя годы остаются на сайте неизменными.'] },
-      { h: 'Тексты', links: [
-        ['Афиша спектакля «Беги, Алиса, беги»', 'https://tagankateatr.ru/repertuar/begi-alisa-begi'],
-        ['Афиша спектакля «Снегурочка»', 'https://tagankateatr.ru/repertuar/Snegurochka']
+      { h: 'Тексты', posts: [
+        ['assets/taganka-text-1.jpg', 'https://tagankateatr.ru/repertuar/begi-alisa-begi', '«Беги, Алиса, беги»'],
+        ['assets/taganka-text-2.jpg', 'https://tagankateatr.ru/repertuar/Snegurochka', '«Снегурочка»']
       ] }
     ]
   },
@@ -240,6 +246,7 @@ function renderBlock(b) {
   if (b.quote) html += `<div class="m-quote">${b.quote.label ? `<div class="q-label">${esc(b.quote.label)}</div>` : ''}${b.quote.p.map(t => `<p>${esc(t)}</p>`).join('')}</div>`;
   if (b.video) html += `<video class="m-video" src="${b.video}" poster="${b.poster || ''}" controls playsinline preload="none"></video>`;
   if (b.links) html += `<div class="m-links">${b.links.map(([t, u]) => `<a href="${esc(u)}" target="_blank" rel="noopener">${esc(t)}</a>`).join('')}</div>`;
+  if (b.posts) html += `<div class="m-posts" style="--cols:${b.posts.length}">${b.posts.map(([src, u, cap]) => `<a class="m-post" href="${esc(u)}" target="_blank" rel="noopener"><img src="${src}" alt="${esc(cap)}"><span>${esc(cap)}</span></a>`).join('')}</div>`;
   if (b.gallery) html += `<div class="m-gallery${b.single ? ' single' : ''}">${b.gallery.map(src => `<img src="${src}" alt="">`).join('')}</div>`;
   if (b.chat) html += `<div class="m-chat"><span class="m-chat-who">${esc(b.chat[0])}</span>${b.chat.slice(1).map(t => `<span>${esc(t)}</span>`).join('')}</div>`;
   return html + '</div>';
