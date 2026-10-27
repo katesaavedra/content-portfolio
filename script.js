@@ -1,10 +1,11 @@
 // Кейсы. cover: картинка из assets/ или null — тогда рисуется типографическая обложка (word + metric).
+// preview: короткое видео, которое играет поверх обложки при наведении.
 const CASES = [
   {
     title: 'Telegram-канал Яндекс Браузера',
     client: 'Яндекс Браузер',
     short: 'Веду тг-канал на 690 000+ подписчиков на тему нейросетей.',
-    word: 'Яндекс Браузер', metric: '690 000+ подписчиков', tone: 'v1',
+    cover: 'assets/yandex-browser-cover.jpg',
     blocks: [
       { h: 'О проекте', p: ['Веду тг-канал на 690 000+ подписчиков на тему нейросетей.', 'Глубокое понимание темы канала и способов интересно рассказать об этом ЦА. Мои посты набирают ERV до 12% (ERV у Aviasales составляет 1,7%).'] },
       { h: 'Цифры', stats: [['690 000+', 'подписчиков в канале'], ['до 12%', 'ERV моих постов'], ['+166%', 'перевыполнение плана в марте']] },
@@ -38,10 +39,11 @@ const CASES = [
     title: 'Реклама телефона HONOR с настоящим медведем',
     client: 'HONOR',
     short: 'Сняла рекламный ролик телефона HONOR с участием настоящего медведя.',
-    word: 'HONOR', metric: 'живой медведь в кадре', tone: 'v2',
+    cover: 'assets/honor-poster.jpg', preview: 'assets/honor-preview.mp4',
     blocks: [
       { h: 'Клиент', p: ['HONOR'] },
       { h: 'О проекте', p: ['Сценарий и съёмка рекламного ролика телефона HONOR с участием настоящего медведя.'] },
+      { h: 'Ролик', video: 'assets/honor-bear.mp4', poster: 'assets/honor-poster.jpg', links: [['Смотреть на YouTube', 'https://youtu.be/2LD9RAq3fbI?si=-nhURwLTrVml_tJu']] },
       { h: 'Моя роль', list: [
         'Составила смету ролика, уложившись в скромный бюджет клиента',
         'Собрала команду из оператора, гафера, фокус-пуллера, второго режиссёра, монтажёра и хэлперов',
@@ -94,7 +96,7 @@ const CASES = [
     title: 'Кабинка Битрикс24 в ДЕПО',
     client: 'Битрикс24',
     short: 'Написала креативные лайны для спецпроекта Битрикс24 в ДЕПО.',
-    word: '«Прячь пасьянс, начальник идёт!»', metric: 'Битрикс24 × ДЕПО', tone: 'v3',
+    cover: 'assets/bitrix-booth.jpg', coverPos: 'center 35%',
     blocks: [
       { h: 'Задача', p: ['Написать копирайт для брендированной кабинки с шумоизоляцией, которую на один месяц установили на фудкорте Депо.', 'Цель: нативно рассказать о преимуществах Битрикс24 через юмор и органичное встраивание в место.'] },
       { h: 'Пример лайнов, которые для атмосферы расположены снаружи кабинки', list: [
@@ -104,14 +106,18 @@ const CASES = [
         'Пссс… не забудь закрыть вкладку с сериалом, когда будешь транслировать экран', 'Объявляется срочный нытинг мемами в рабочем чатике',
         'Обед — это маленький отпуск', 'Ты уже тусуешься в баре, а на часах всё ещё 12:04 вторника'
       ] },
-      { h: 'Полный копирайт', links: [['Открыть документ', 'https://docs.google.com/document/d/1Ib-v7QRJvG5Z78ECq05vuMtFIMxoz_PNwS1hDjFegzI/edit?pli=1&tab=t.jq398cqej3r1']] }
+      { h: 'Как это выглядело', gallery: ['assets/bitrix-booth.jpg'], single: true },
+      { h: 'Ссылки', links: [
+        ['Полный копирайт', 'https://docs.google.com/document/d/1Ib-v7QRJvG5Z78ECq05vuMtFIMxoz_PNwS1hDjFegzI/edit?pli=1&tab=t.jq398cqej3r1'],
+        ['Видео о кабинке в TikTok Битрикс24', 'https://www.tiktok.com/@bitrix24_ru/video/7558505547624992018']
+      ] }
     ]
   },
   {
     title: 'Посты для Яндекса и Сбера',
     client: 'Яндекс · Сбер',
     short: 'Писала посты для каналов Яндекс Путешествий, Яндекс Лавки и Сбер Университета, которые собирали до 33К просмотров.',
-    word: 'Яндекс Путешествия · Лавка · Сбер Университет', metric: 'до 33К просмотров', tone: 'v1',
+    cover: 'assets/yandex-travel-cover.jpg',
     blocks: [
       { h: 'О проекте', p: ['Писала посты для каналов Яндекс Путешествий, Яндекс Лавки и Сбер Университета, которые собирали до 33К просмотров.'] },
       { h: 'Посты', links: [
@@ -125,7 +131,7 @@ const CASES = [
     title: 'Молодёжный форум SVET ON',
     client: 'Норникель',
     short: 'Превратила сообщество ВКонтакте в интерактивную площадку для зумеров: +1 780% к охвату за 57 дней.',
-    word: 'SVET ON', metric: '+1 780% охват', tone: 'v2',
+    cover: 'assets/svet-1.jpg', coverPos: 'center 15%',
     blocks: [
       { h: 'О проекте', p: ['SVET ON — форум «Норникеля» для школьников и студентов, которые хотят попробовать себя в предпринимательстве, инженерии, IT и волонтёрстве.'] },
       { h: 'Задача', p: ['С помощью ежедневного контент-сопровождения форума привлечь новых участников.'] },
@@ -135,14 +141,15 @@ const CASES = [
         'Интегрировала мероприятие в сообщество «Люди территории» и органично внедрили креативные форматы в информационный контент',
         'Предложила нестандартные идеи в духе SVET ON — вовлекли текущую аудиторию и удержали новую'
       ] },
-      { h: 'Результаты за 57 дней', stats: [['+2 350', 'прирост подписчиков'], ['88 316', 'охват топ-поста'], ['+1 780%', 'прирост охвата'], ['+3 120%', 'прирост комментариев'], ['+812%', 'прирост репостов']] }
+      { h: 'Результаты за 57 дней', stats: [['+2 350', 'прирост подписчиков'], ['88 316', 'охват топ-поста'], ['+1 780%', 'прирост охвата'], ['+3 120%', 'прирост комментариев'], ['+812%', 'прирост репостов']] },
+      { h: 'Как это выглядело', gallery: ['assets/svet-1.jpg', 'assets/svet-2.jpg', 'assets/svet-3.jpg', 'assets/svet-4.jpg'] }
     ]
   },
   {
     title: 'Афиши спектаклей Театра на Таганке',
     client: 'Театр на Таганке',
     short: 'Писала тексты описания спектаклей для официального сайта Театра на Таганке.',
-    word: 'Театр на Таганке', metric: 'тексты на сайте до сих пор', tone: 'v3',
+    cover: 'assets/taganka-cover.jpg',
     blocks: [
       { h: 'О проекте', p: ['Работала в театре, посещала спектакли, писала про них тексты, брала интервью у режиссёров и актёров, создавала контент для соцсетей. До сих пор мои тексты спустя годы остаются на сайте неизменными.'] },
       { h: 'Тексты', links: [
@@ -155,7 +162,7 @@ const CASES = [
     title: 'Теле- и радиопрограммы от Института воспитания',
     client: 'Институт воспитания',
     short: 'Писала сценарии для просветительских роликов и радиопередач для детей и подростков и снимала их как режиссёр.',
-    word: 'Открытые уроки и радио', metric: 'сценарий + режиссура', tone: 'v1',
+    cover: 'assets/iv-lesson.jpg',
     blocks: [
       { h: 'Клиент', p: ['Институт изучения детства, семьи и воспитания при Министерстве просвещения РФ'] },
       { h: 'О проекте', p: ['Писала сценарии для просветительских роликов и радиопередач для детей и подростков и снимала их как режиссёр.', 'Также брала интервью и работала с ведущими шоу для детей и родителей «на ухе», подсказывая им подходящие вопросы гостям и темы для программы.'] },
@@ -163,7 +170,8 @@ const CASES = [
         ['Всероссийский Открытый урок «Будь готов!» к 100-летию Всесоюзной пионерской организации — сценарий и режиссура', 'https://xn--80aqakjqje5byf.xn--80adrabb4aegksdjbafk0u.xn--p1ai/ou-22-05-19/index.html'],
         ['Всероссийский Открытый урок «9 мая. Победа народа» к 77-й годовщине Победы — сценарий и режиссура', 'https://xn--80aqakjqje5byf.xn--80adrabb4aegksdjbafk0u.xn--p1ai/ou-22-05-05/index.html'],
         ['Программа «Семейный час» на Радио Дача — сценарий', 'https://www.xn--80adrabb4aegksdjbafk0u.xn--p1ai/press-center/radio/semeynyy-chas-200822-itogi/']
-      ] }
+      ] },
+      { h: 'Как это выглядело', gallery: ['assets/iv-lesson.jpg', 'assets/iv-radio.jpg'] }
     ]
   },
   {
@@ -204,7 +212,7 @@ const pad = n => String(n).padStart(2, '0');
 const grid = document.getElementById('casesGrid');
 grid.innerHTML = CASES.map((c, i) => {
   const cover = c.cover
-    ? `<div class="case-cover"><span class="case-num">${pad(i + 1)}</span><img src="${c.cover}" alt="" loading="lazy" style="object-position:${c.coverPos || 'center'}"></div>`
+    ? `<div class="case-cover"><span class="case-num">${pad(i + 1)}</span><img src="${c.cover}" alt="" loading="lazy" style="object-position:${c.coverPos || 'center'}">${c.preview ? `<video src="${c.preview}" muted loop playsinline preload="none"></video><span class="cover-play">▶ видео</span>` : ''}</div>`
     : `<div class="case-cover type ${c.tone}"><span class="case-num">${pad(i + 1)}</span><span class="cover-metric">${esc(c.metric)}</span><span class="cover-word">${esc(c.word)}</span></div>`;
   return `<button class="case-card" type="button" data-i="${i}">
     ${cover}
@@ -230,6 +238,7 @@ function renderBlock(b) {
   if (b.olist) html += `<ol class="m-list">${b.olist.map(t => `<li>${esc(t)}</li>`).join('')}</ol>`;
   if (b.stats) html += `<div class="m-stats">${b.stats.map(([n, l]) => `<div class="m-stat"><b>${esc(n)}</b><span>${esc(l)}</span></div>`).join('')}</div>`;
   if (b.quote) html += `<div class="m-quote">${b.quote.label ? `<div class="q-label">${esc(b.quote.label)}</div>` : ''}${b.quote.p.map(t => `<p>${esc(t)}</p>`).join('')}</div>`;
+  if (b.video) html += `<video class="m-video" src="${b.video}" poster="${b.poster || ''}" controls playsinline preload="none"></video>`;
   if (b.links) html += `<div class="m-links">${b.links.map(([t, u]) => `<a href="${esc(u)}" target="_blank" rel="noopener">${esc(t)}</a>`).join('')}</div>`;
   if (b.gallery) html += `<div class="m-gallery${b.single ? ' single' : ''}">${b.gallery.map(src => `<img src="${src}" alt="" loading="lazy">`).join('')}</div>`;
   if (b.chat) html += `<div class="m-chat"><span class="m-chat-who">${esc(b.chat[0])}</span>${b.chat.slice(1).map(t => `<span>${esc(t)}</span>`).join('')}</div>`;
@@ -252,6 +261,7 @@ function openCase(i) {
 }
 
 function closeCase() {
+  modalContent.querySelectorAll('video').forEach(v => v.pause());
   modal.classList.remove('open');
   modal.setAttribute('aria-hidden', 'true');
   document.body.classList.remove('modal-open');
@@ -262,6 +272,13 @@ grid.addEventListener('click', e => {
   const card = e.target.closest('.case-card');
   if (card) openCase(+card.dataset.i);
 });
+// Hover preview video on cards
+grid.querySelectorAll('.case-cover video').forEach(v => {
+  const card = v.closest('.case-card');
+  card.addEventListener('mouseenter', () => { v.currentTime = 0; v.play().then(() => v.classList.add('playing')).catch(() => {}); });
+  card.addEventListener('mouseleave', () => { v.pause(); v.classList.remove('playing'); });
+});
+
 modalClose.addEventListener('click', closeCase);
 modal.addEventListener('click', e => { if (e.target === modal) closeCase(); });
 document.addEventListener('keydown', e => { if (e.key === 'Escape' && modal.classList.contains('open')) closeCase(); });
